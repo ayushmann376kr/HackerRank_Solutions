@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "HackerRank GitHub Saver",
+    "version": "1.0.0",
+    "description": "Save HackerRank problems and solutions to GitHub.",
+
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+
+    "host_permissions": [
+        "https://www.hackerrank.com/*",
+        "http://127.0.0.1:5000/*"
+    ],
+
+    "action": {
+        "default_popup": "popup.html"
+    },
+
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.hackerrank.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
